@@ -3,6 +3,6 @@ module "vpc" {
   env                 = var.env
 
   for_each        = var.vpc
-  vpc_cidr        = each.value["cidr"]
+  vpc_cidr        = each.value["vpc_cidr"]
  
 }
