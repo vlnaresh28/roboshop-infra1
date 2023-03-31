@@ -1,5 +1,5 @@
 env              = "prod"
-bastion_cidr     = ["172.31.7.180/32"]
+bastion_cidr     = ["172.31.7.100/32"]
 monitoring_nodes = ["172.31.13.185/32"]
 dns_domain       = "learndevopseasy.online"
 
