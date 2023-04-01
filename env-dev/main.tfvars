@@ -1,9 +1,12 @@
-env = "dev"
+env              = "dev"
+bastion_cidr     = ["172.31.7.100/32"]
+monitoring_nodes = ["172.31.0.141/32"]
+dns_domain       = "learndevopseasy.online"
 
 vpc = {
   main = {
     vpc_cidr = "10.0.0.0/16"
-    
+
     public_subnets = {
       public-az1 = {
         name              = "public-az1"
@@ -16,7 +19,6 @@ vpc = {
         availability_zone = "us-east-1b"
       }
     }
-
 
     private_subnets = {
       web-az1 = {
@@ -53,6 +55,7 @@ vpc = {
 
   }
 }
+
 docdb = {
   main = {
     engine                  = "docdb"
@@ -90,7 +93,7 @@ elasticache = {
 
 rabbitmq = {
   main = {
-    instance_type = "t3.micro"
+    instance_type = "t3.small"
     allow_subnets = "app"
   }
 }
@@ -192,6 +195,4 @@ apps = {
     listener_priority = 10
     parameters        = []
   }
-} 
-  
-  
+}
