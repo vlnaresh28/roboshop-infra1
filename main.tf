@@ -10,6 +10,8 @@ module "vpc" {
   public_subnets  = each.value["public_subnets"]
   private_subnets = each.value["private_subnets"]
 }
+/*
+module "docdb" {
 
 module "docdb" {
   source = "git::https://github.com/vlnaresh28/tf-module-docdb.git"
@@ -80,6 +82,7 @@ module "rabbitmq" {
   allow_subnets = lookup(local.subnet_cidr, each.value["allow_subnets"], null)
 
 }
+*/
 
 module "alb" {
   source = "git::https://github.com/vlnaresh28/tf-module-alb.git"
@@ -128,7 +131,7 @@ output "alb" {
   value = module.elasticache
 }
 
-
+/*
 ### Load Runner
 resource "aws_spot_instance_request" "load-runner" {
   ami                    = data.aws_ami.ami.id
@@ -166,3 +169,4 @@ resource "null_resource" "load-gen" {
     ]
   }
 }
+*/
